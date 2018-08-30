@@ -7686,8 +7686,6 @@ exports.default = {
     },
     decoded: function decoded() {
       var extracted = zeroWidthLib.extract(this.encodedIn);
-      console.log('extracted');
-      console.log('decoded', zeroWidthLib.decode(extracted.hid));
       return {
         vis: extracted.vis,
         hid: zeroWidthLib.decode(extracted.hid)
@@ -7697,7 +7695,6 @@ exports.default = {
       if (this.escapeIn.length === 0) {
         return '<span class="placeholder">"博彩"与"暴力"会在这里被匹配，这里是未逃脱文本</span>';
       }
-      console.log('this.escapeIn', this.filter(this.escapeIn));
       return this.filter(this.escapeIn);
     },
     filteredEscaped: function filteredEscaped() {
@@ -7726,7 +7723,6 @@ exports.default = {
       });
     },
     toGithub: function toGithub() {
-      console.log('clicked');
       location.href = 'https://github.com/yuanfux/zero-width-lib';
     }
   }
