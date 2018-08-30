@@ -1,0 +1,24 @@
+{
+  "name": "zero-width-web",
+  "version": "1.0.0",
+  "description": "a website demo for zero width lib",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --out-dir docs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yuan Fu",
+  "license": "MIT",
+  "devDependencies": {
+    "@vue/component-compiler-utils": "^2.2.0",
+    "node-sass": "^4.9.3",
+    "parcel-bundler": "^1.9.7",
+    "vue-template-compiler": "^2.5.17"
+  },
+  "dependencies": {
+    "vue": "^2.5.17",
+    "vue-hot-reload-api": "^2.3.0",
+    "zero-width-lib": "^1.0.5"
+  }
+}
