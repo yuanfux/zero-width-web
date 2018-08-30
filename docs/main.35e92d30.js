@@ -12,4 +12,4 @@ var t=arguments[3];Object.defineProperty(exports,"__esModule",{value:!0});var e=
 },{"zero-width-lib":"O63Z","./Corner":"zoq2"}],"HJD/":[function(require,module,exports) {
 "use strict";var e=require("vue"),u=n(e),r=require("./App.vue"),t=n(r);function n(e){return e&&e.__esModule?e:{default:e}}new u.default({el:"#app",render:function(e){return e(t.default)}});
 },{"vue":"4673","./App.vue":"6plK"}]},{},["HJD/"], null)
-//# sourceMappingURL=docs/main.35e92d30.map
+//# sourceMappingURL=main.35e92d30.map
