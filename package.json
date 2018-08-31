@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel index.html",
-    "build": "npm run clean && parcel build index.html --out-dir docs --public-url ./ --no-minify --no-source-maps",
+    "build": "npm run clean && parcel build index.html --out-dir docs --public-url ./ --no-source-maps",
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf docs/*"
   },
