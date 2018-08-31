@@ -7803,6 +7803,9 @@ exports.default = {
     }
   },
   computed: {
+    repoLink: function repoLink() {
+      return 'https://github.com/yuanfux/zero-width-lib';
+    },
     svgStyle: function svgStyle() {
       return {
         'fill': this.bgColor,
@@ -7831,10 +7834,7 @@ exports.default = {
     "a",
     {
       staticClass: "github-corner",
-      attrs: {
-        href: "https://github.com/yuanfux/zero-width-lib",
-        "aria-label": "View source on GitHub"
-      }
+      attrs: { href: _vm.repoLink, "aria-label": "View source on GitHub" }
     },
     [
       _c(
@@ -8063,8 +8063,6 @@ exports.default = {
     },
     decoded: function decoded() {
       var extracted = zeroWidthLib.extract(this.encodedIn);
-      console.log('extracted');
-      console.log('decoded', zeroWidthLib.decode(extracted.hid));
       return {
         vis: extracted.vis,
         hid: zeroWidthLib.decode(extracted.hid)
@@ -8074,7 +8072,6 @@ exports.default = {
       if (this.escapeIn.length === 0) {
         return '<span class="placeholder">"博彩"与"暴力"会在这里被匹配，这里是未逃脱文本</span>';
       }
-      console.log('this.escapeIn', this.filter(this.escapeIn));
       return this.filter(this.escapeIn);
     },
     filteredEscaped: function filteredEscaped() {
@@ -8103,7 +8100,6 @@ exports.default = {
       });
     },
     toGithub: function toGithub() {
-      console.log('clicked');
       location.href = 'https://github.com/yuanfux/zero-width-lib';
     }
   }
@@ -8509,7 +8505,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '64275' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '57891' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
