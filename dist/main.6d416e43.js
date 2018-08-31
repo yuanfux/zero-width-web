@@ -7793,6 +7793,8 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
+var GITHUB = 'https://github.com';
+
 exports.default = {
   props: {
     bgColor: {
@@ -7804,7 +7806,7 @@ exports.default = {
   },
   computed: {
     repoLink: function repoLink() {
-      return 'https://github.com/yuanfux/zero-width-lib';
+      return GITHUB + '/yuanfux/zero-width-lib';
     },
     svgStyle: function svgStyle() {
       return {
@@ -8505,7 +8507,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '57891' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '59003' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 

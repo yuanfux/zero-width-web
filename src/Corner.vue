@@ -10,6 +10,8 @@
 </template>
 
 <script>
+const GITHUB = 'https://github.com';
+
 export default {
   props: {
     bgColor: {
@@ -21,7 +23,7 @@ export default {
   },
   computed: {
     repoLink() {
-      return 'https://github.com/yuanfux/zero-width-lib';
+      return `${GITHUB}/yuanfux/zero-width-lib`;
     },
     svgStyle() {
       return {
