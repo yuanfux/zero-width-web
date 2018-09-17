@@ -7793,8 +7793,6 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-var GITHUB = 'https://github.com';
-
 exports.default = {
   props: {
     bgColor: {
@@ -7805,9 +7803,6 @@ exports.default = {
     }
   },
   computed: {
-    repoLink: function repoLink() {
-      return GITHUB + '/yuanfux/zero-width-lib';
-    },
     svgStyle: function svgStyle() {
       return {
         'fill': this.bgColor,
@@ -7836,7 +7831,10 @@ exports.default = {
     "a",
     {
       staticClass: "github-corner",
-      attrs: { href: _vm.repoLink, "aria-label": "View source on GitHub" }
+      attrs: {
+        href: "https://github.com/yuanfux/zero-width-lib",
+        "aria-label": "View source on GitHub"
+      }
     },
     [
       _c(
@@ -8072,13 +8070,13 @@ exports.default = {
     },
     filtered: function filtered() {
       if (this.escapeIn.length === 0) {
-        return '<span class="placeholder">"博彩"与"暴力"会在这里被匹配，这里是未逃脱文本</span>';
+        return '<span class="placeholder">Without zero width characters, "sexual" and "violent" will be crossed out</span>';
       }
       return this.filter(this.escapeIn);
     },
     filteredEscaped: function filteredEscaped() {
       if (this.escapeIn.length === 0) {
-        return '<span class="placeholder">"博彩"与"暴力"会在这里被匹配，这里是已逃脱文本</span>';
+        return '<span class="placeholder">With zero width characters, "sexual" and "violent" will be fine</span>';
       }
       return this.filter(zeroWidthLib.split(this.escapeIn));
     }
@@ -8097,7 +8095,7 @@ exports.default = {
       });
     },
     filter: function filter(text) {
-      return this.escapeHtml(text).replace(/博彩|暴力/g, function (matched) {
+      return this.escapeHtml(text).replace(/sexual|violent/g, function (matched) {
         return '<span class="crossed">' + matched + '</span>';
       });
     },
@@ -8131,12 +8129,12 @@ exports.default = {
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "title install" }, [
-        _vm._v("\n    0. 安装\n  ")
+        _vm._v("\n    0. Install\n  ")
       ]),
       _vm._v(" "),
       _vm._m(1),
       _vm._v(" "),
-      _c("div", { staticClass: "title" }, [_vm._v("\n    1. 加密\n  ")]),
+      _c("div", { staticClass: "title" }, [_vm._v("\n    1. Encode\n  ")]),
       _vm._v(" "),
       _c("div", { staticClass: "flex-container" }, [
         _c("div", { staticClass: "flex-item-lg" }, [
@@ -8150,7 +8148,7 @@ exports.default = {
                   expression: "visIn"
                 }
               ],
-              attrs: { placeholder: "在这输入可见文本" },
+              attrs: { placeholder: "Type visible text" },
               domProps: { value: _vm.visIn },
               on: {
                 input: function($event) {
@@ -8173,7 +8171,7 @@ exports.default = {
                   expression: "hidIn"
                 }
               ],
-              attrs: { placeholder: "在这输入隐形文本(支持😆)" },
+              attrs: { placeholder: "Type invisible text (support😆)" },
               domProps: { value: _vm.hidIn },
               on: {
                 input: function($event) {
@@ -8203,7 +8201,8 @@ exports.default = {
               staticClass: "readonly",
               attrs: {
                 readonly: "",
-                placeholder: "可将这里的内容粘贴至下方解密"
+                placeholder:
+                  "Copy the content here and paste to the decode section below"
               },
               domProps: { value: _vm.encoded },
               on: {
@@ -8219,7 +8218,7 @@ exports.default = {
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "title" }, [_vm._v("\n    2. 解密\n  ")]),
+      _c("div", { staticClass: "title" }, [_vm._v("\n    2. Decode\n  ")]),
       _vm._v(" "),
       _c("div", { staticClass: "flex-container" }, [
         _c("div", { staticClass: "flex-item-lg" }, [
@@ -8233,7 +8232,7 @@ exports.default = {
                   expression: "encodedIn"
                 }
               ],
-              attrs: { placeholder: "在这输入需要解密的文本" },
+              attrs: { placeholder: "Paste the encoded text" },
               domProps: { value: _vm.encodedIn },
               on: {
                 input: function($event) {
@@ -8261,7 +8260,7 @@ exports.default = {
                 }
               ],
               staticClass: "readonly",
-              attrs: { readonly: "", placeholder: "这里是解密后的可见文本" },
+              attrs: { readonly: "", placeholder: "Decoded visible text" },
               domProps: { value: _vm.decoded.vis },
               on: {
                 input: function($event) {
@@ -8285,7 +8284,7 @@ exports.default = {
                 }
               ],
               staticClass: "readonly",
-              attrs: { readonly: "", placeholder: "这里是解密后的隐形文本" },
+              attrs: { readonly: "", placeholder: "Decoded invisible text" },
               domProps: { value: _vm.decoded.hid },
               on: {
                 input: function($event) {
@@ -8301,7 +8300,7 @@ exports.default = {
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "title" }, [
-        _vm._v("\n    3. 逃脱正则匹配\n  ")
+        _vm._v("\n    3. Escape Regex\n  ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "flex-container" }, [
@@ -8316,7 +8315,7 @@ exports.default = {
                   expression: "escapeIn"
                 }
               ],
-              attrs: { placeholder: "在这输入需要逃脱正则匹配的文本" },
+              attrs: { placeholder: 'Type "sexual" and "violent"' },
               domProps: { value: _vm.escapeIn },
               on: {
                 input: function($event) {
@@ -8507,7 +8506,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '59003' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '53825' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 

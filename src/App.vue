@@ -8,23 +8,23 @@
         zero-width-lib
       </div>
       <div class="title install">
-        0. 安装
+        0. Install
       </div>
       <div class="img-container">
         <img width="40%" src="https://user-images.githubusercontent.com/6414178/44473787-b39a3100-a663-11e8-9df6-f4faed559e76.png" />
       </div>
       <div class="title">
-        1. 加密
+        1. Encode
       </div>
       <div class="flex-container">
         <div class="flex-item-lg">
           <div class="textarea-container">
             <textarea v-model="visIn"
-                      placeholder="在这输入可见文本"></textarea>
+                      placeholder="Type visible text"></textarea>
           </div>
           <div class="textarea-container">
             <textarea v-model="hidIn"
-                      placeholder="在这输入隐形文本(支持😆)"></textarea>
+                      placeholder="Type invisible text (support😆)"></textarea>
           </div>
         </div>
         <div class="flex-item-sm">
@@ -38,18 +38,18 @@
             <textarea class="readonly"
                       v-model="encoded"
                       readonly
-                      placeholder="可将这里的内容粘贴至下方解密"></textarea>
+                      placeholder="Copy the content here and paste to the decode section below"></textarea>
           </div>
         </div>
       </div>
       <div class="title">
-        2. 解密
+        2. Decode
       </div>
       <div class="flex-container">
         <div class="flex-item-lg">
           <div class="textarea-container">
             <textarea v-model="encodedIn"
-                      placeholder="在这输入需要解密的文本"></textarea>
+                      placeholder="Paste the encoded text"></textarea>
           </div>
         </div>
         <div class="flex-item-sm">
@@ -63,24 +63,24 @@
             <textarea class="readonly"
                       v-model="decoded.vis"
                       readonly
-                      placeholder="这里是解密后的可见文本"></textarea>
+                      placeholder="Decoded visible text"></textarea>
           </div>
           <div class="textarea-container">
             <textarea class="readonly"
                       v-model="decoded.hid"
                       readonly
-                      placeholder="这里是解密后的隐形文本"></textarea>
+                      placeholder="Decoded invisible text"></textarea>
           </div>
         </div>
       </div>
       <div class="title">
-        3. 逃脱正则匹配
+        3. Escape Regex
       </div>
       <div class="flex-container">
         <div class="flex-item-lg">
           <div class="textarea-container">
             <textarea v-model="escapeIn"
-                      placeholder="在这输入需要逃脱正则匹配的文本"></textarea>
+                      placeholder='Type "sexual" and "violent"'></textarea>
           </div>
         </div>
         <div class="flex-item-sm">
@@ -143,13 +143,13 @@ export default {
     },
     filtered: function() {
       if(this.escapeIn.length === 0) {
-        return '<span class="placeholder">"博彩"与"暴力"会在这里被匹配，这里是未逃脱文本</span>';
+        return '<span class="placeholder">Without zero width characters, "sexual" and "violent" will be crossed out</span>';
       }
       return this.filter(this.escapeIn);
     },
     filteredEscaped: function() {
       if(this.escapeIn.length === 0) {
-        return '<span class="placeholder">"博彩"与"暴力"会在这里被匹配，这里是已逃脱文本</span>';
+        return '<span class="placeholder">With zero width characters, "sexual" and "violent" will be fine</span>';
       }
       return this.filter(zeroWidthLib.split(this.escapeIn));
     }
@@ -168,7 +168,7 @@ export default {
       });
     },
     filter(text) {
-      return this.escapeHtml(text).replace(/博彩|暴力/g, matched => {
+      return this.escapeHtml(text).replace(/sexual|violent/g, matched => {
         return `<span class="crossed">${matched}</span>`;
       });
     },
