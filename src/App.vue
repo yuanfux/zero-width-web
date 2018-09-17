@@ -38,7 +38,7 @@
             <textarea class="readonly"
                       v-model="encoded"
                       readonly
-                      placeholder="Copy the content here and paste to the decode section below"></textarea>
+                      placeholder="Copy the encoded text here and paste to the decode section below"></textarea>
           </div>
         </div>
       </div>
